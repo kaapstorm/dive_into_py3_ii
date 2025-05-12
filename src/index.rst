@@ -13,6 +13,7 @@ This repository adds a few chapters, inspired by Pilgrim's work.
    type_hints
    testing_with_pytest
    using_rest_apis
+   ai_with_cursor
 
 
 .. _Dive Into Python 3: https://diveintopython3.net/
