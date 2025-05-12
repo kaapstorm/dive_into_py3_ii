@@ -1,0 +1,25 @@
+name: Sphinx workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Build and Deploy Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+
+      - name: Build HTML files
+        run: make html
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: generated-site
+          path: _build/html/
