@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    name: Build and Deploy Documentation
+    name: Build Documentation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,5 +21,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: generated-site
+          name: generated-docs
           path: _build/html/
